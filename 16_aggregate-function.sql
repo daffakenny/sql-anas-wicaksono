@@ -1,0 +1,103 @@
+--sum
+--total nilai dalam sebuah kolom
+--
+--count
+--jumlah baris/data dalam sebuah kolom
+--null is not counted
+--
+--avg
+--rata-rata
+--
+--min
+--nilai minimum 
+--
+--max
+--nilai maksimal
+
+-- Create a table named "sales" to illustrate aggregate functions
+CREATE TABLE sales (
+    order_id INT PRIMARY KEY, -- id transaksi penjualan
+    product_name VARCHAR(50), -- nama produk
+    quantity INT, -- kuantitas barang yang terjual
+    price DECIMAL(10, 2), -- harga barang satuan
+    order_date DATE -- tanggal pemesanan
+);
+
+-- Insert sample data into the "sales" table
+INSERT INTO sales (order_id, product_name, quantity, price, order_date)
+VALUES
+    (1, 'Product A', 5, 10.99, '2023-09-01'),
+    (2, 'Product B', 3, 15.75, '2023-09-02'),
+    (3, 'Product A', 2, 10.99, '2023-09-03'),
+    (4, 'Product C', 7, 8.49, '2023-09-04'),
+    (5, 'Product B', 4, 15.75, '2023-09-05'),
+    (6, 'Product A', 6, 10.99, '2023-09-06'),
+    (7, 'Product C', 8, 8.49, '2023-09-07'),
+    (8, 'Product D', 1, 12.25, '2023-09-08'),
+    (9, 'Product B', 2, 15.75, '2023-09-09'),
+    (10, 'Product A', 3, 10.99, '2023-09-10'),
+    (11, 'Product D', 5, 12.25, '2023-09-11'),
+    (12, 'Product C', 6, 8.49, '2023-09-12'),
+    (13, 'Product B', 3, 15.75, '2023-09-13'),
+    (14, 'Product A', 4, 10.99, '2023-09-14'),
+    (15, 'Product C', 5, 8.49, '2023-09-15'),
+    (16, 'Product D', 2, 12.25, '2023-09-16'),
+    (17, 'Product B', 6, 15.75, '2023-09-17'),
+    (18, 'Product A', 7, 10.99, '2023-09-18'),
+    (19, 'Product C', 3, 8.49, '2023-09-19'),
+    (20, NULL, 4, 12.25, '2023-09-20');
+
+select *
+from sales
+
+
+select sum(quantity*price) as totalRevenue -- count total revenue as a whole
+from sales s ;
+
+select product_name ,
+sum(quantity *price) as totalRevenue -- count total revenue grouped by product name
+from sales s 
+group by product_name;
+
+select sum(quantity) as qty_sold, product_name  -- count product sold per product name
+from sales s 
+group by product_name ;
+
+
+
+select count(product_name) -- not counting null values
+from sales s 
+
+select count(distinct(product_name))
+from sales s 	;
+
+
+
+select avg(price)
+from sales s ;
+
+select avg(price), product_name 
+from sales s 
+group by product_name ;
+
+
+
+select min(price)
+from sales s ;
+
+select 
+min(price) "minPrice",
+product_name 
+from sales s 
+group by product_name ;
+
+select max(price)
+from sales s ;
+
+select 
+max(price) "maxPrice",
+product_name 
+from sales s 
+group by product_name ;
+
+drop table sales 
