@@ -1,0 +1,20 @@
+1. List all employees and their departments.
+2. Find the total salary expenditure of the company.
+3. Retrieve the names of employees who are managers.
+4. List all projects along with their start and end dates.
+5. Find employees who have worked on 'Project Alpha'.
+6. Retrieve the details of employees who were hired in the year 2020.
+7. List the departments and the number of employees in each department.
+8. Find the highest salary in the company and the employee who earns it.
+9. Retrieve the names of employees who work in the 'IT' department.
+10. List the projects that have a budget greater than $150,000.
+11. Retrieve the names and roles of employees working on 'Project Beta'.
+12. Find the average salary of employees in each department.
+13. List all employees who do not have a manager.
+14. Retrieve the details of projects that ended in 2022.
+15. List the employees along with the projects they are associated with.
+16. Find the department with the highest number of projects.
+17. Retrieve the names of employees who have not been assigned to any project.
+18. List the managers and the number of employees they manage.
+19. Retrieve the names of employees hired after '2020-01-01'.
+20. Find the total budget of projects handled by the 'Finance' department.

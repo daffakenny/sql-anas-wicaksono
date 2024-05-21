@@ -1,0 +1,3 @@
+SELECT *
+FROM Projects
+WHERE YEAR(EndDate) = 2022;
